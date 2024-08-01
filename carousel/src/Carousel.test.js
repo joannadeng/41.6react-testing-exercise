@@ -2,14 +2,16 @@ import React,{ render, fireEvent } from "@testing-library/react";
 import Carousel from "./Carousel";
 import TEST_IMAGES from "./_testCommon.js";
 
-// it ("should work without crashing", function() {
-//   render(<Carousel />)
-// })
+it ("should work without crashing", function() {
+  render(<Carousel photos={TEST_IMAGES}
+    title="images for testing"/>)
+})
 
-// it ("should match the snapshot", function() {
-//   const {asFragment} = render(<Carousel />)
-//   expect(asFragment()).toMatchSnapshot()
-// })
+it ("should match the snapshot", function() {
+  const {asFragment} = render(<Carousel photos={TEST_IMAGES}
+    title="images for testing"/>)
+  expect(asFragment()).toMatchSnapshot()
+})
 
 it("works when you click on the left arrow", function() {
   const { container } = render(
